@@ -1,7 +1,3 @@
-/**
- * Main JS file for Casper behaviours
- */
-
 /* globals jQuery, document */
 (function ($, undefined) {
     "use strict";
@@ -26,11 +22,27 @@
           dataType: "jsonp",
           success: function(response) {
             var workshopsHTML = response.results.map(function(event) {
-              return $("<li><span class='time'>" + moment(event.time).format("MMM Do") + "</span>, " + "<a href='" + event.event_url + "'>" + event.name + "</a></li>");
+              return $("<li><span class='time'>" + moment(event.time).format("MMM Do") + "</span>, " + "<a target='_blank' href='" + event.event_url + "'>" + event.name + "</a></li>");
             });
             $("#upcoming-workshops").html(workshopsHTML);
           }
         });
+
+        var $obj = $('#engage');
+        var top = $obj.offset().top + 300;
+        $(window).scroll(function (event) {
+          // what the y position of the scroll is
+          var y = $(this).scrollTop();
+          // whether that's below the form
+          if (y >= top) {
+            // if so, ad the fixed class
+            $obj.addClass('fixed-corner');
+          } else {
+            // otherwise remove it
+            $obj.removeClass('fixed-corner');
+          }
+        });
+
     });
 
     // Arctic Scroll by Paul Adam Davis
