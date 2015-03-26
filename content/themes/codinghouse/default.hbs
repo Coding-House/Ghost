@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {{! Document Settings }}
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    {{! Page Meta }}
     <title>{{meta_title}}</title>
     <meta name="description" content="{{meta_description}}" />
 
@@ -14,33 +12,181 @@
 
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
+    <!-- Coding House Tags -->
+    <meta name="apple-mobile-web-app-title" content="Coding House Blog">
+    <meta property="fb:app_id" content="{909236559126944}" />
+    <meta property="fb:admins" content="1036980068" />
+    <meta property="article:publisher" content="https://www.facebook.com/codinghouse.co" />
+    <meta property="og:site_name" content="Coding House Blog" />
+    <meta property="og:site" content="http://codinghouse.co/blog" />
+    <meta property="og:title" content="{{meta_title}}" />
+    <meta property="og:description" content="{{meta_description}}" />
+    <meta property="og:type" content="article" />
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='twitter:image:src' content='{{pageImg}}' />
+    <meta name='twitter:site' content='@codinghouse' />
+    <meta name='twitter:url' content='http://codinghouse.co/blog'/>
+    <meta name='twitter:description' content='{{meta_description}}' />
+    <meta name='twitter:title' content='{{meta_title}}' />
+    <meta itemprop="thumbnailUrl" content="http://cdn.codinghouse.co/images/logo-black.png"/>
+    <meta itemprop="image" content="http://cdn.codinghouse.co/images/logo-black.png"/>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-44860221-13', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script type="text/javascript">
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '54a5d371eddd5b5335000188');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+    <script type="text/javascript" id="inspectletjs">
+      window.__insp = window.__insp || [];
+      __insp.push(['wid', 202097116]);
+      (function() {
+        function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+        if (window.attachEvent){
+          window.attachEvent('onload', __ldinsp);
+        } else{
+          window.addEventListener('load', __ldinsp, false);
+        }
+      })();
+    </script>
+
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '909236559126944',
+          xfbml      : true,
+          version    : 'v2.2'
+        });
+      };
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div id="fb-root"></div>
+    <script>
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
     {{! Styles'n'Scripts }}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/codinghouse.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
-    {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
-<body class="{{body_class}} nav-closed">
+<body class="{{body_class}}">
 
-    {{navigation}}
+  <header id="ch-header" class="clearfix">
+    <a id="nav-logo" class="pull-left" href="http://codinghouse.co"><img src="http://cdn.codinghouse.co/images/logo.png" height="80"></a>
+    <div class="pull-right right-section">
+      <ul class="list-inline hidden-xs">
+        <li><a href="/"><i class="fa fa-home"></i></a></li>
+        <li><a href="https://twitter.com/codinghouse" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://www.facebook.com/codinghouse.co" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://www.linkedin.com/company/coding-house" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="https://plus.google.com/109765241809541857359" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+        <li><a href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i></a></li>
+      </ul>
+      <div id="learn-more">
+        <a href="http://codinghuse.co">LEARN ABOUT CODINGHOUSE</a>
+      </div>
+    </div>
+  </header>
 
-    <div class="site-wrapper">
+    <div class="site-wrapper container">
+      <div class="row">
+        <div class="col-sm-8 main-column">
+          {{{body}}}
+        </div>
 
-        {{! Everything else gets inserted here }}
-        {{{body}}}
-
-        <footer class="site-footer clearfix">
-        </footer>
-
+        <div class="col-sm-4 side-column">
+          <div class="banner banner-codinghouse">
+            <div class="header">Upcoming Workshops</div>
+            <ul id="upcoming-workshops" class="list-unstyled">
+            </ul>
+          </div>
+          <div class="banner banner-newsletter">
+            <div class="header">Sign Up for News and Updates</div>
+            <form action="//codinghouse.us10.list-manage.com/subscribe/post?u=ba673ed6200e919c9739ac345&amp;id=82a5d99195" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+              <div id="mc_embed_signup_scroll">
+                <div class="form-group">
+                  <input type="email" value="" name="EMAIL" class="form-control" id="mce-EMAIL" placeholder="Email Address" required="">
+                  <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                  </div>
+                  <div style="position: absolute; left: -5000px;"><input type="text" name="b_ba673ed6200e919c9739ac345_82a5d99195" tabindex="-1" value=""></div>
+                </div>
+                <div class="form-group">
+                  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="banner banner-codinghouse">
+            <a href="http://codinghouse.co" class="banner-link" target="_blank">
+              <h4>Brought To You By</h4>
+              <img src="http://cdn.codinghouse.co/images/logo-black.png" class="img-responsive">
+              <button class="btn btn-primary">Learn More</button>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
 
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
 
-    {{! The main JavaScript file for Casper }}
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 col-lg-4">
+            Coding House © 2015, All Rights Reserved
+          </div>
+          <div class="col-sm-4 col-lg-4">
+            <span><i class="fa fa-envelope"></i>info@codinghouse.co</span> <span><i class="fa fa-phone"></i>(650) 600-1020</span>
+          </div>
+          <div class="col-sm-4 col-lg-4 social">
+            <a href="https://twitter.com/codinghouse" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.facebook.com/codinghouse.co" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/company/coding-house" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a href="https://plus.google.com/109765241809541857359" target="_blank"><i class="fa fa-google-plus"></i></a>
+            <a href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
-
 </body>
 </html>

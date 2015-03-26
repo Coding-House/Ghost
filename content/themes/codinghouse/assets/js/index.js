@@ -20,6 +20,17 @@
             $("body").toggleClass("nav-opened nav-closed");
         });
 
+        $.ajax({
+          url: "http://api.meetup.com/2/events?key=242b2548681072d272a6a7a7b1d2f61&sign=true&group_urlname=edgecoders&callback=ecw",
+          jsonp: "callback",
+          dataType: "jsonp",
+          success: function(response) {
+            var workshopsHTML = response.results.map(function(event) {
+              return $("<li><span class='time'>" + moment(event.time).format("MMM Do") + "</span>, " + "<a href='" + event.event_url + "'>" + event.name + "</a></li>");
+            });
+            $("#upcoming-workshops").html(workshopsHTML);
+          }
+        });
     });
 
     // Arctic Scroll by Paul Adam Davis

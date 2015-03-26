@@ -1,34 +1,7 @@
-/* ==========================================================================
-   Table of Contents
-   ========================================================================== */
-
-/*
-
-    0.  Normalize
-    1.  Icons
-    2.  General
-    3.  Utilities
-    4.  General
-    5.  Single Post
-    6.  Tag Archive
-    7.  Third Party Elements
-    8.  Pagination
-    9.  Footer
-    10. Media Queries (Tablet)
-    11. Media Queries (Mobile)
-    12. Animations
-
-*/
-
-/* ==========================================================================
-   0. Normalize.css v2.1.3 | MIT License | git.io/normalize | (minified)
-   ========================================================================== */
-
 article, aside, details,
 figcaption, figure,
 footer, header, hgroup,
-main, nav, section,
-summary { display: block; }
+main, section, summary { display: block; }
 audio, canvas, video { display: inline-block; }
 audio:not([controls]) { display: none; height: 0; }
 [hidden], template { display: none; }
@@ -174,8 +147,6 @@ html {
 }
 
 body {
-    height: 100%;
-    max-height: 100%;
     font-family: "Merriweather", serif;
     letter-spacing: 0.01rem;
     font-size: 1.8rem;
@@ -247,7 +218,7 @@ p, ul, ol, dl {
     -webkit-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
     -moz-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
     -o-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
-    margin: 0 0 1.75em 0;
+    margin: 0 0 .25em 0;
     text-rendering: geometricPrecision;
 }
 
@@ -465,46 +436,9 @@ margin on the iframe, cause it breaks stuff. */
     vertical-align: middle;
 }
 
-/* Wraps the main content & footer */
-.site-wrapper {
-    position: relative;
-    z-index: 10;
-    min-height: 100%;
-    background: #fff;
-    -webkit-transition: -webkit-transform 0.5s ease;
-            transition: transform 0.5s ease;
-}
-
-body.nav-opened .site-wrapper {
-    overflow-x: hidden;
-    -webkit-transform: translate3D(-240px, 0, 0);
-        -ms-transform: translate3D(-240px, 0, 0);
-            transform: translate3D(-240px, 0, 0);
-    -webkit-transition: -webkit-transform 0.3s ease;
-            transition: transform 0.3s ease;
-}
-
-
 /* ==========================================================================
    4. General - The main styles for the the theme
    ========================================================================== */
-
-/* Big cover image on the home page */
-.main-header {
-    position: relative;
-    display: table;
-    width: 100%;
-    height: 100vh;
-    margin-bottom: 5rem;
-    text-align: center;
-    background: #222 no-repeat center center;
-    background-size: cover;
-    overflow: hidden;
-}
-
-.main-header .inner {
-    width: 80%;
-}
 
 .main-nav {
     position: relative;
@@ -525,24 +459,6 @@ body.nav-opened .nav-cover {
     right: 240px;
     bottom: 0;
     z-index: 200;
-}
-
-.nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 5;
-    width: 240px;
-    opacity: 0;
-    background: #111;
-    margin-bottom: 0;
-    text-align: left;
-    overflow-y: auto;
-    -webkit-transition: -webkit-transform 0.5s ease,
-                        opacity 0.3s ease 0.7s;
-            transition: transform 0.5s ease,
-                        opacity 0.3s ease 0.7s;
 }
 
 body.nav-closed .nav {
@@ -616,93 +532,6 @@ body.nav-opened .nav {
     background: rgb(255,255,255);
 }
 
-.nav ul {
-    padding: 90px 9% 5%;
-    list-style: none;
-    counter-reset: item;
-}
-
-.nav li:before {
-    display: block;
-    float: right;
-    padding-right: 4%;
-    padding-left: 5px;
-    text-align: right;
-    font-size: 1.2rem;
-    vertical-align: bottom;
-    color: #B8B8B8;
-    content: counter(item, lower-roman);
-    counter-increment: item;
-}
-.nav li {
-    margin: 0;
-}
-.nav li a {
-    text-decoration: none;
-    line-height: 1.4;
-    font-size: 1.4rem;
-    display: block;
-    padding: 0.6rem 4%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-.nav li a:after {
-    display: inline-block;
-    content: " .......................................................";
-    color: rgba(255,255,255,0.2);
-    margin-left: 5px;
-}
-.nav .nav-current:before {
-    color: #fff;
-}
-.nav .nav-current a:after {
-    content: " ";
-    border-bottom: rgba(255,255,255,0.5) 1px solid;
-    width: 100%;
-    height: 1px;
-}
-
-.nav a:link,
-.nav a:visited {
-    color: #B8B8B8;
-}
-
-.nav li.nav-current a,
-.nav a:hover,
-.nav a:active,
-.nav a:focus {
-    color: #fff;
-}
-
-.subscribe-button {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: block;
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    right: 30px;
-    height: 38px;
-    padding: 0 20px;
-    color: #111 !important;
-    text-align: center;
-    font-size: 12px;
-    font-family: "Open Sans", sans-serif;
-    text-transform: uppercase;
-    text-decoration: none;
-    line-height: 35px;
-    border-radius: 3px;
-    background: #fff;
-    transition: all ease 0.3s;
-}
-.subscribe-button:before {
-    font-size: 9px;
-    margin-right: 6px;
-}
-
-
 /* Create a bouncing scroll-down arrow on homepage with cover image */
 .scroll-down {
     display: block;
@@ -729,21 +558,6 @@ body.nav-opened .nav {
     color: #fff;
     -webkit-animation: none;
     animation: none;
-}
-
-/* Put a semi-opaque radial gradient behind the icon to make it more visible
-   on photos which happen to have a light background. */
-.home-template .main-header:after {
-    display: block;
-    content: " ";
-    width: 150px;
-    height: 130px;
-    border-radius: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    margin-left: -75px;
-    background: radial-gradient(ellipse at center,  rgba(0,0,0,0.15) 0%,rgba(0,0,0,0) 70%,rgba(0,0,0,0) 100%);
 }
 
 /* Hide when there's no cover image or on page2+ */
@@ -1641,10 +1455,6 @@ body:not(.post-template) .post-title {
     .nav-close {
         position: absolute;
         top: 18px;
-    }
-
-    .nav ul {
-        padding: 60px 9% 5%;
     }
 
     .inner,
