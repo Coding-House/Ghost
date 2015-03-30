@@ -30,15 +30,13 @@
 
         var $obj = $('#engage');
         var top = $obj.offset().top + 300;
+        var bottom = $(window).innerHeight() - 300;
         $(window).scroll(function (event) {
-          // what the y position of the scroll is
           var y = $(this).scrollTop();
-          // whether that's below the form
-          if (y >= top) {
-            // if so, ad the fixed class
+          console.log(y, top, bottom);
+          if (y > top && y > bottom) {
             $obj.addClass('fixed-corner');
           } else {
-            // otherwise remove it
             $obj.removeClass('fixed-corner');
           }
         });
