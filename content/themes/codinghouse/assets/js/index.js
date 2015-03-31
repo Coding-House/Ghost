@@ -33,7 +33,6 @@
         var bottom = $(window).innerHeight() - 300;
         $(window).scroll(function (event) {
           var y = $(this).scrollTop();
-          console.log(y, top, bottom);
           if (y > top && y > bottom) {
             $obj.addClass('fixed-corner');
           } else {
