@@ -1158,7 +1158,6 @@ body:not(.post-template) .post-title {
 /* Push the previous/next links out to the left/right */
 .older-posts,
 .newer-posts {
-    position: absolute;
     display: inline-block;
     padding: 0 15px;
     border: #bfc8cd 1px solid;
