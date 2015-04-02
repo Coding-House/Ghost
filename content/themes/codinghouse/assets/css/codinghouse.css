@@ -516,3 +516,8 @@ a.banner-link:hover {
 pre {
   background: #e4e4e4!important;
 }
+
+.post-image {
+  width: 100%;
+  height: auto;
+}
