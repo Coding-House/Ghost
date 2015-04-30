@@ -17,6 +17,8 @@ body {
   text-align: left;
 }
 
+#learn-more {text-align: center;}
+
 #upcoming-workshops li .time {
   font-weight: bold;
 }
