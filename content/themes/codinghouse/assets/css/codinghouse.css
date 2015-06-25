@@ -2,11 +2,6 @@ body {
   background-color: #f8f8f8;
 }
 
-a {
-  color: blue;
-  text-decoration: underline;
-}
-
 .post-content h1, .post-content h2,
 .post-content h3, .post-content h4 {
   margin-top: 1.3em;
@@ -183,7 +178,8 @@ article h1 {
 }
 
 .post a {
-  color: #000;
+  color: blue;
+  text-decoration: underline;
 }
 
 .clear {
