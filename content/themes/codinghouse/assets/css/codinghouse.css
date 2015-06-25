@@ -526,3 +526,7 @@ pre {
   width: 100%;
   height: auto;
 }
+
+.post-title a {
+  color: #000;
+}
